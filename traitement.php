@@ -50,7 +50,7 @@
             }
 
             th {
-                background-color: GRAY;
+                background-color: #2CD3E1;
             }
 
             form {
@@ -90,13 +90,17 @@
 
             .links{
                 padding:24px;
-                background-color:gray;
+                background-color:#2CD3E1;
                 
             }
 
             .links a {
-                color:purple;
+                color:black;
             }
+
+            
+
+            
 
     </style>
 </head>
@@ -148,7 +152,7 @@
         die("Erreur de connexion à la base de données : " . mysqli_connect_error());
     }
 
-    $req="select * from analyse";
+    $req="select * from analise";
     $result=mysqli_query($conn,$req);
     ?>
 
@@ -156,10 +160,11 @@
     <table>
     
         <th>ID</th>
-        <th>Nom</th>
         <th>Prenom</th>
-        <th>Date de naissance</th>
-        <th>Lieu de naissance</th>
+        <th>Nom</th>
+        <th>Sexe</th>
+        <th>date_naissance</th>
+        <th>lieu_naissance</th>
         <th>Date</th>
         <th>Obsertion</th>
     
@@ -170,10 +175,12 @@
             while($row=mysqli_fetch_assoc($result)){
                 echo'<tr>'.
                     '<td>'.$row['id'].'</td>'.
-                    '<td>'.$row['nom'].'</td>'.
                     '<td>'.$row['prenom'].'</td>'.
-                    '<td>'.$row['date_de_naissance'].'</td>'. 
-                    '<td>'.$row['lieu_de_naissance'].'</td>'.
+                    '<td>'.$row['nom'].'</td>'.
+                    '<td>'.$row['sexe'].'</td>'. 
+                    '<td>'.$row['date_naissance'].'</td>'.
+                    '<td>'.$row['lieu_naissance'].'</td>'.
+                    '<td>'.$row['date'].'</td>'.
                     '<td >'."<a href=modifier.php?id=$row[id]>Detail</a>".'</td>'.  
                     '</tr>';
             }
@@ -188,20 +195,13 @@
 
     <div class="links">
             
-        <a  href=" "><< Renseigner >></a>
+        <a  href="ajout_patient.php"><< Renseigner >></a>
 
     </div>
     
-    
-
-</body>
-</html>
-
-
-
-
-<!-- fin -->
-
+    <footer class="footer">
+            <img src="images/imga.png" alt="">
+    </footer>
 
 
 </body>

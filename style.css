@@ -301,7 +301,7 @@ label{
     background: linear-gradient(rgba(0, 0, 0, 0.808),rgba(33, 31, 31, 0.895)), url("./images/Aesthetic\ Nurse.jpeg") fixed  no-repeat center top;
     background-size: 1300px;
     height: 200px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .jumbo-trait h2 {
@@ -311,7 +311,7 @@ label{
     font-size: xx-large;
     text-transform: uppercase;
     text-decoration: underline #2CD3E1;
-    position: sticky;
+    /* position: sticky; */
     color:#ffffff;
     padding: 100px;
 }
