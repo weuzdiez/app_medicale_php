@@ -97,11 +97,6 @@
             .links a {
                 color:black;
             }
-
-            
-
-            
-
     </style>
 </head>
 <body>
@@ -129,11 +124,18 @@
 
 
         <div class="jumbo-trait">
-           
+
             <h2>
-                Consultation des Patients 
+                Liste de Consultation des Patients 
            </h2>
            
+           <form action="recherche.php" method="get">
+                <div class="recherche">
+                <input  name="field" id="search" type="search" >
+                <button id="click" name="click" class="fa fa-search"></button>
+                </div>
+            </form>
+
         </div>
 
 
@@ -155,8 +157,6 @@
     $req="select * from analise";
     $result=mysqli_query($conn,$req);
     ?>
-
-    </div>
     <table>
     
         <th>ID</th>

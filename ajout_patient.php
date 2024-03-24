@@ -52,7 +52,9 @@
             body {
                 font-family: Arial, sans-serif;
                 margin: 20px;
-                di
+                display:flex;
+                justify-content:center;
+                align-items: center;
             }
 
             h1, h2 {
@@ -98,6 +100,7 @@
                 background-color: #3498db;
                 color: white;
                 cursor: pointer;
+                width:108%;
             }
 
             input[type="submit"]:hover {
@@ -137,7 +140,7 @@
         <input type="text" name="lieu_naissance" required><br>
 
         <label for="">date:</label>
-        <input type="text" name="date" required><br>
+        <input type="date" name="date" required><br>
 
         <input type="submit" name="inscrire" value="inscrire">
         <a href="traitement.php">Patients</a>
