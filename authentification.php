@@ -1,12 +1,38 @@
 
+<?php
 
+        $host = "localhost";
+        $user = "root"; 
+        $passe = "1234"; 
+        $base = "gestion";
 
+        $connexion=mysqli_connect($host, $user, $passe, $base) or die("Erreur de connexion ".mysqli_errno($connexion));  
 
+        session_start();
 
+        if(isset($_POST['connecter'])){
+            $email=$_POST['email'];
+            $password=$_POST['password'];
 
+            $req = "SELECT id FROM authentification WHERE email='$email' AND password='$password'";
+            $result = mysqli_query($connexion, $req);
 
+            if ($result) {
+                if (mysqli_num_rows($result) == 1) {
+                    $_SESSION['email'] = $email;
+                    header("location: index.html");
+                    exit(); // Ajout d'un exit() après la redirection pour terminer l'exécution du script
+                } else {
+                    $error = "Nom d'utilisateur ou mot de passe incorrect";
+                }
+            }
+            else {
+                $error = "Erreur dans la requête SQL : " . mysqli_error($connexion);
+            }
+        }
+        mysqli_close($connexion);
 
-
+?>
 
 
 
@@ -94,16 +120,16 @@
     <div class="container">
         <img src="images/logo_isep.png" alt="">
             <h2>Connexion</h2>
-            <form action="login_process.php" method="POST">
+            <form action="" method="POST">
                 <div class="form-group">
                     <label for="username">Email:</label>
-                    <input type="email" id="username" placeholder="entrez votre mail " name="username" required>
+                    <input type="email" id="username" placeholder="entrez votre mail " name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe:</label>
                     <input type="password" id="password" placeholder="XXXXXXXXXXX " name="password" required>
                 </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit" name="connecter">Se connecter</button>
             </form>
             <p>Vous n'avez pas de compte? <a href="inscription.php">Inscrivez-vous ici</a>.</p>
         </div>
