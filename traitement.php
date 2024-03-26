@@ -128,13 +128,6 @@
             <h2>
                 Liste de Consultation des Patients 
            </h2>
-           
-           <form action="recherche.php" method="get">
-                <div class="recherche">
-                <input  name="field" id="search" type="search" >
-                <button id="click" name="click" class="fa fa-search"></button>
-                </div>
-            </form>
 
         </div>
 
@@ -181,7 +174,7 @@
                     '<td>'.$row['date_naissance'].'</td>'.
                     '<td>'.$row['lieu_naissance'].'</td>'.
                     '<td>'.$row['date'].'</td>'.
-                    '<td >'."<a href=modifier.php?id=$row[id]>Detail</a>".'</td>'.  
+                    '<td >'."<a href=consultation.php?id=$row[id]>Detail</a>".'</td>'.  
                     '</tr>';
             }
         }else {

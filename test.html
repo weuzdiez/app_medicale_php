@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #2CD3E1;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Détails de la Consultation</h2>
+
+<table>
+    <tr>
+        <th>Informations</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td><?php echo $row['date']; ?></td>
+    </tr>
+    <tr>
+        <td>Heure</td>
+        <td><?php echo $row['heure']; ?></td>
+    </tr>
+    <tr>
+        <td>Nom du Patient</td>
+        <td><?php echo $row['nom_patient']; ?></td>
+    </tr>
+    <tr>
+        <td>Prénom du Patient</td>
+        <td><?php echo $row['prenom_patient']; ?></td>
+    </tr>
+    <tr>
+        <td>Tension Artérielle</td>
+        <td><?php echo $row['tension_arterielle']; ?></td>
+    </tr>
+    <tr>
+        <td>Fréquence Cardiaque</td>
+        <td><?php echo $row['frequence_cardiaque']; ?></td>
+    </tr>
+    <tr>
+        <td>Taux de Glucose</td>
+        <td><?php echo $row['taux_glucose']; ?></td>
+    </tr>
+    <tr>
+        <td>Température</td>
+        <td><?php echo $row['temperature']; ?></td>
+    </tr>
+    <tr>
+        <td>Observations</td>
+        <td><?php echo $row['observations']; ?></td>
+    </tr>
+</table>
+
+</body>
+</html>

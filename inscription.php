@@ -1,9 +1,32 @@
+<?php
+        
+        $host = "localhost";
+        $user = "root"; 
+        $passe = "1234"; 
+        $base = "gestion";
 
+        $connexion=mysqli_connect($host, $user, $passe, $base) or die("Erreur de connexion ".mysqli_errno($connexion)); 
 
+        
+        session_start();
 
+        // Récupérer les données du formulaire
+        if(isset($_POST['inscrire'])){
+            $email=$_POST['email'];
+            $password=$_POST['password'];
 
+        // Préparer et exécuter la requête SQL pour insérer les données dans la table utilisateur
+        $sql = "INSERT INTO authentification (email, password) VALUES ('$email', '$password')";
 
-
+        if ($connexion->query($sql) === TRUE) {
+            header("location: index.html");
+        } else {
+            echo "Erreur: " . $sql . "<br>" . $connexion->error;
+        }
+        }
+        // Fermer la connexion à la base de données
+        $connexion->close();
+?>
 
 
 
@@ -88,7 +111,7 @@
     <div class="container">
             <img src="images/logo_isep.png" alt="">
             <h2>Inscription</h2>
-            <form action="register_process.php" method="POST">
+            <form action="" method="POST">
                 
                 <div class="form-group">
                     <label for="email">Adresse e-mail:</label>
@@ -98,7 +121,7 @@
                     <label for="password">Mot de passe:</label>
                     <input type="password" id="password" placeholder="XXXXXXXXXX " name="password" required>
                 </div>
-                <button type="submit">S'inscrire</button>
+                <button type="submit" name="inscrire">S'inscrire</button>
             </form>
             <p>Déjà un utilisateur? <a href="authentification.php">Connectez-vous ici</a>.</p>
         </div>

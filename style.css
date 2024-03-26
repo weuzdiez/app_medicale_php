@@ -213,9 +213,11 @@
     font-family: sans-serif;
 }
 
+
+
 .section4 {
     text-align: center;
-    padding: 90px;
+    padding: 60px;
     background: url("./images/hero.png") fixed;
 
 }
@@ -223,7 +225,7 @@
 .section4 h2 {
     padding-top: 350px;
     color: #2CD3E1;
-    font-size: 30px;
+    font-size: 40px;
     padding-bottom: 15px;
     font-weight: 700;
     font-family: sans-serif;
@@ -232,8 +234,11 @@
 .section4 p{
     color: rgb(223, 216, 216);
     font-family: sans-serif;
+    padding-bottom: 150px;
 
 }
+
+
 
 .section5 h2{
     text-align: center;
